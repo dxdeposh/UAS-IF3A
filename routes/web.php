@@ -5,6 +5,7 @@ use App\Http\Controllers\HelloController;
 use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\KategoriBeritaController;
+use App\Http\Controllers\BarangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,3 +60,9 @@ Route::resource('kategori-berita', KategoriBeritaController::class);
 Route::resource('kendaraan', KendaraanController::class);
 
 Route::resource('buku', BukuController::class);
+
+Route::get('/', function () {
+    return redirect()->route('barang.index');
+});
+
+Route::resource('barang', BarangController::class);
